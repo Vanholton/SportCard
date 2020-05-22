@@ -1644,6 +1644,7 @@ footer .footer-down .link-down a:hover {
   line-height: 150%;
   color: #4b5d8c;
   font-family: 'Cera Pro Regular', sans-serif;
+  margin-bottom: 40px;
 }
 .content-block .content-inner p {
   margin-bottom: 20px;
@@ -1690,33 +1691,53 @@ footer .footer-down .link-down a:hover {
   line-height: 100%;
   color: #ffffff;
 }
-.basket-empty {
+.basket-empty,
+.thanks-page {
   width: 100%;
   padding: 130px 0 160px;
 }
-.basket-empty .bastet-inner {
+.basket-empty .bastet-inner,
+.thanks-page .bastet-inner,
+.basket-empty .thanks-inner,
+.thanks-page .thanks-inner {
   width: 100%;
   position: relative;
   text-align: center;
 }
-.basket-empty .bastet-inner .face {
+.basket-empty .bastet-inner .face,
+.thanks-page .bastet-inner .face,
+.basket-empty .thanks-inner .face,
+.thanks-page .thanks-inner .face,
+.basket-empty .bastet-inner .like,
+.thanks-page .bastet-inner .like,
+.basket-empty .thanks-inner .like,
+.thanks-page .thanks-inner .like {
   margin-bottom: 36px;
 }
-.basket-empty .bastet-inner .caption {
+.basket-empty .bastet-inner .caption,
+.thanks-page .bastet-inner .caption,
+.basket-empty .thanks-inner .caption,
+.thanks-page .thanks-inner .caption {
   font-size: 36px;
   line-height: 100%;
   color: #4b5d8c;
   font-family: 'Cera Pro Bold', sans-serif;
   margin-bottom: 20px;
 }
-.basket-empty .bastet-inner .text {
+.basket-empty .bastet-inner .text,
+.thanks-page .bastet-inner .text,
+.basket-empty .thanks-inner .text,
+.thanks-page .thanks-inner .text {
   font-size: 16px;
   line-height: 150%;
   color: #4b5d8c;
   font-family: 'Cera Pro Regular', sans-serif;
   margin-bottom: 40px;
 }
-.basket-empty .bastet-inner .btn-main {
+.basket-empty .bastet-inner .btn-main,
+.thanks-page .bastet-inner .btn-main,
+.basket-empty .thanks-inner .btn-main,
+.thanks-page .thanks-inner .btn-main {
   display: inline-block;
   width: 225px;
   height: 52px;
@@ -1733,7 +1754,10 @@ footer .footer-down .link-down a:hover {
   transition: ease-in-out 0.6s;
   margin: 0 auto;
 }
-.basket-empty .bastet-inner .btn-main:before {
+.basket-empty .bastet-inner .btn-main:before,
+.thanks-page .bastet-inner .btn-main:before,
+.basket-empty .thanks-inner .btn-main:before,
+.thanks-page .thanks-inner .btn-main:before {
   content: '';
   position: absolute;
   width: 80%;
@@ -1747,10 +1771,16 @@ footer .footer-down .link-down a:hover {
   filter: blur(15px);
   z-index: 0;
 }
-.basket-empty .bastet-inner .btn-main:hover {
+.basket-empty .bastet-inner .btn-main:hover,
+.thanks-page .bastet-inner .btn-main:hover,
+.basket-empty .thanks-inner .btn-main:hover,
+.thanks-page .thanks-inner .btn-main:hover {
   background-color: #ed1c1c;
 }
-.basket-empty .bastet-inner .btn-main span {
+.basket-empty .bastet-inner .btn-main span,
+.thanks-page .bastet-inner .btn-main span,
+.basket-empty .thanks-inner .btn-main span,
+.thanks-page .thanks-inner .btn-main span {
   z-index: 1;
   position: relative;
   font-family: 'Cera Pro Regular', sans-serif;
