@@ -61,6 +61,7 @@
 @bg-gray3: #E9E9E9;
 @bg-gray4: #F3F3F3;
 @bg-grey5: #C4C4C4;
+@bg-gray-dark: #404040;
 @bg-red: #FC3504;
 @bg-red-hover: #ED1C1C;
 
@@ -1227,7 +1228,7 @@ footer {
       .popular-card-inner {
         overflow: hidden;
         .flex();
-        padding: 40px 30px 55px;
+        padding: 40px 30px 60px;
         position: relative;
         flex-wrap: wrap;
         flex-flow: column;
@@ -1531,6 +1532,10 @@ footer {
   width: 100%;
   overflow: hidden;
 
+  &.white {
+    background: @bg-white;
+  }
+
   .contact-wrap {
     width: 100%;
     position: relative;
@@ -1721,6 +1726,9 @@ footer {
   width: 100%;
   background: @bg-white;
   padding: 90px 0 130px;
+  &.grey {
+    background: @bg-gray;
+  }
 
   .caption {
 
@@ -2033,6 +2041,644 @@ footer {
         color: @color-text-white;
       }
     }
+  }
+}
+
+// -------
+// ---- ~ CATALOG PAGE
+// _______
+.catalog {
+  width: 100%;
+  position: relative;
+  padding: 60px 0;
+
+  .catalog-inner {
+    width: 100%;
+    .flex();
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .sidebar-filter {
+      width: 22%;
+    }
+
+    .catalog-cards {
+      width: 74%;
+      .flex();
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .catalog-card {
+        background: @bg-white;
+        border: 1px solid @bg-gray3;
+        border-radius: 5px;
+        position: relative;
+        outline: 0;
+        transition: ease-in-out .6s;
+        width: 32%;
+        margin-bottom: 20px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 70%;
+          height: 131px;
+          bottom: -10px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          background-color: @bg-black;
+          opacity: 0.1;
+          filter: blur(40px);
+          z-index: -1;
+          transition: ease-in-out .6s;
+        }
+
+        &:hover {
+          box-shadow: 0 2px 7px rgba(75, 93, 140, .5);
+
+          &:before {
+            background-color: transparent;
+            filter: blur(0);
+          }
+        }
+
+        .catalog-card-inner {
+          overflow: hidden;
+          .flex();
+          padding: 40px 30px 55px;
+          position: relative;
+          flex-wrap: wrap;
+          flex-flow: column;
+          align-items: center;
+          text-align: center;
+
+          .labels {
+            position: absolute;
+            top: 22px;
+            right: 0;
+
+            .new, .discount {
+              width: 68px;
+              height: 31px;
+              .flex();
+              align-items: center;
+              justify-content: center;
+              font-family: @CeraProRegular;
+              font-size: 16px;
+              line-height: 100%;
+              color: @color-text-white;
+              text-transform: uppercase;
+            }
+
+            .new {
+              border-bottom-left-radius: 10px;
+              border-top-left-radius: 3px;
+              background: @bg-blue;
+              box-shadow: 0 0 20px rgba(29, 61, 255, 0.4);
+              margin-bottom: 5px;
+            }
+
+            .discount {
+              border-top-left-radius: 10px;
+              border-bottom-left-radius: 3px;
+              background: @bg-red;
+              box-shadow: 0 0 20px rgba(252, 53, 4, 0.4);
+            }
+          }
+
+          .image {
+            width: 144px;
+            height: 187px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .tag {
+            font-family: @CeraProLight;
+            color: @color-text-blue;
+            opacity: .5;
+            font-size: 22px;
+            line-height: 43px;
+            height: 43px;
+          }
+
+          .catalog-card-title {
+            height: 70px;
+
+            a {
+              font-family: @CeraProBold;
+              font-size: 18px;
+              line-height: 100%;
+              color: @color-text-blue;
+              transition: ease-in-out .5s;
+
+              &:hover {
+                opacity: .6;
+              }
+            }
+
+            margin-bottom: 20px;
+          }
+
+          .catalog-card-price {
+            font-family: @CeraProRegular;
+            font-size: 37px;
+            line-height: 100%;
+            color: @color-text-blue;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 35px;
+
+            small {
+              font-family: @CeraProRegular;
+              font-size: 22px;
+              line-height: 100%;
+              opacity: .5;
+            }
+
+            span {
+              display: inline-block;
+              position: absolute;
+              box-shadow: 0px 0px 20px rgba(29, 61, 255, 0.4);
+              top: -7px;
+              right: -58px;
+              border-top-left-radius: 7px;
+              border-bottom-right-radius: 7px;
+              font-family: @CeraProLight;
+              font-size: 16px;
+              text-decoration: line-through;
+              padding: 1px 8px 2px;
+              line-height: 100%;
+              background: @bg-blue;
+              color: @color-text-white;
+
+              &:before {
+                content: '';
+                position: absolute;
+                left: -4px;
+                bottom: 0;
+                border: 4px solid transparent;
+                border-right: 0 solid @bg-blue;
+                border-bottom: 14px solid @bg-blue;
+                border-top-right-radius: 5px;
+                border-bottom-left-radius: 4px;
+                transition: all .4s;
+              }
+
+              &:after {
+                content: '';
+                position: absolute;
+                right: -4px;
+                bottom: 1px;
+                border: 4px solid transparent;
+                border-left: 0 solid @bg-blue;
+                border-top: 14px solid @bg-blue;
+                border-top-right-radius: 4px;
+                border-bottom-left-radius: 5px;
+                transition: all .4s;
+              }
+            }
+          }
+
+          .catalog-card-btn {
+            position: relative;
+
+            a {
+              display: inline-block;
+              width: 151px;
+              height: 52px;
+              background-color: @bg-red;
+              border-radius: 5px;
+              color: @color-text-white;
+              font-size: 16px;
+              transition: ease-in-out .6s;
+              line-height: 52px;
+              font-family: @CeraProRegular;
+              position: relative;
+              z-index: 1;
+
+              &:before {
+                content: '';
+                position: absolute;
+                width: 70%;
+                height: 90%;
+                top: 15px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                background-color: @bg-red;
+                opacity: 0.3;
+                filter: blur(15px);
+                z-index: -1;
+              }
+
+              &:hover {
+                background-color: @bg-red-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .pagination {
+      width: 100%;
+    }
+  }
+}
+
+// -------
+// ---- ~ PRODUCT PAGE
+// _______
+.product {
+  width: 100%;
+
+  .product-inner {
+    width: 100%;
+    .flex();
+    justify-content: space-between;
+    padding: 80px 0 80px;
+
+    .sliders {
+      width: 645px;
+      height: 500px;
+      padding-bottom: 20px;
+      .flex();
+      justify-content: space-between;
+
+      .slider-full {
+        width: 480px;
+        height: 100%;
+        background-color: @bg-white;
+        border: 1px solid @bg-gray3;
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          width: 80%;
+          height: 70%;
+          background: @bg-gray-dark;
+          opacity: 0.2;
+          filter: blur(30px);
+          z-index: -1;
+          padding-bottom: 20px;
+        }
+
+        .slick-track,.slick-list {
+          height: 100%;
+        }
+        .item {
+          width: 100%;
+          height: 100%;
+          .flex();
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .slider-nav {
+        width: 150px;
+        height: 500px;
+        padding-bottom: 20px;
+        .slick-slide {
+          margin: 0 0 15px;
+        }
+
+        .slick-list {
+          margin: 0 0 -15px;
+        }
+        .item {
+          background-color: @bg-white;
+          width: 100%;
+          height: 150px;
+          border: 1px solid @bg-gray3;
+          outline: 0;
+          padding: 25px;
+          .flex();
+          align-items: center;
+          justify-content: center;
+          transition: ease-in-out .6s;
+          position: relative;
+          cursor: pointer;
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            width: 70%;
+            height: 90%;
+            background: @bg-gray-dark;
+            opacity: 0.1;
+            filter: blur(7px);
+            z-index: -1;
+          }
+          img {
+            height: 100%;
+          }
+          &.slick-current {
+            cursor: default;
+            border: 1px solid @bg-blue-darken;
+          }
+          &:hover {
+            background-color: @bg-white;
+            border: 1px solid @bg-blue-darken;
+          }
+        }
+      }
+    }
+
+    .product-content {
+      width: 48%;
+      margin-top: 40px;
+
+      .title {
+        font-family: @CeraProBold;
+        font-size: 36px;
+        line-height: 100%;
+        color: @color-text-blue;
+        margin-bottom: 16px;
+      }
+
+      .product-label {
+        width: 100%;
+        font-family: @CeraProRegular;
+        font-size: 22px;
+        line-height: 100%;
+        color: @color-text-blue;
+        opacity: .5;
+        .flex();
+        justify-content: flex-start;
+        margin-bottom: 50px;
+
+        .tag {
+          margin-right: 22px;
+        }
+        .availability {
+          span {
+            display: none;
+            &.active {
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      .order-price {
+        width: 100%;
+        .flex();
+        justify-content: space-between;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: @color-text-blue;
+          opacity: .3;
+        }
+
+        .price {
+          font-family: @CeraProRegular;
+          color: @color-text-blue;
+          font-size: 36px;
+          line-height: 100%;
+          position: relative;
+          small {
+            font-size: 22px;
+            opacity: .5;
+          }
+          span {
+            display: inline-block;
+            position: absolute;
+            top: -7px;
+            right: -58px;
+            border-top-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            font-family: @CeraProLight;
+            font-size: 16px;
+            text-decoration: line-through;
+            padding: 1px 8px 2px;
+            line-height: 100%;
+            background: @bg-blue;
+            box-shadow: 0px 0px 20px rgba(29, 61, 255, 0.4);
+            color: @color-text-white;
+
+            &:before {
+              content: '';
+              position: absolute;
+              left: -4px;
+              bottom: 0;
+              border: 4px solid transparent;
+              border-right: 0 solid @bg-blue;
+              border-bottom: 14px solid @bg-blue;
+              border-top-right-radius: 5px;
+              border-bottom-left-radius: 4px;
+              transition: all .4s;
+            }
+
+            &:after {
+              content: '';
+              position: absolute;
+              right: -4px;
+              bottom: 1px;
+              border: 4px solid transparent;
+              border-left: 0 solid @bg-blue;
+              border-top: 14px solid @bg-blue;
+              border-top-right-radius: 4px;
+              border-bottom-left-radius: 5px;
+              transition: all .4s;
+            }
+          }
+        }
+
+
+        .right-part {
+          .flex();
+          align-items: center;
+          .quantity {
+            margin-right: 50px;
+            .number {
+              padding: 0;
+              border: 0;
+              background: none;
+              margin: 0;
+              width: 35px;
+              height: 40px;
+              font-family: @CeraProRegular;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 22px;
+              line-height: normal;
+              text-align: center;
+              color: @color-text-blue;
+              display: inline-block;
+            }
+            .minus,.plus {
+              cursor: pointer;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              color: @color-text-blue;
+              opacity: .5;
+              border: 1px solid transparent;
+              width: 30px;
+              height: 38px;
+              font-size: 22px;
+              font-family: @CeraProRegular;
+              line-height: normal;
+              padding: 0;
+              margin: 0;
+              transition: all .5s;
+              &:hover {
+                opacity: 1;
+                border: 1px solid @bg-blue-darken;
+              }
+            }
+          }
+          .text {
+            font-family: @CeraProBold;
+            color: @color-text-blue;
+            opacity: .5;
+            font-size: 16px;
+            line-height: 100%;
+            margin-right: 10px;
+          }
+
+          .order-btn {
+            display: inline-block;
+            width: 151px;
+            height: 52px;
+            .flex();
+            align-items: center;
+            justify-content: center;
+            background-color: @bg-red;
+            border-radius: 5px;
+            position: relative;
+            transition: ease-in-out .6s;
+            cursor: pointer;
+
+            &:before {
+              content: '';
+              position: absolute;
+              width: 80%;
+              height: 90%;
+              top: 15px;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              background-color: @bg-red;
+              opacity: 0.4;
+              filter: blur(15px);
+              z-index: 0;
+            }
+
+            &:hover {
+              background-color: @bg-red-hover;
+            }
+
+            span {
+              z-index: 1;
+              position: relative;
+              font-family: @CeraProRegular;
+              font-size: 16px;
+              line-height: 100%;
+              color: @color-text-white;
+            }
+          }
+        }
+      }
+
+      .question {
+        a {
+          font-family: @CeraProBold;
+          color: @color-text-blue;
+          opacity: .5;
+          font-size: 14px;
+          line-height: 100%;
+          border-bottom: 1px dashed @bg-blue-darken;
+          transition: ease-in-out .6s;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .specifications {
+    width: 100%;
+    .flex();
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .caption {
+      font-size: 36px;
+      line-height: 100%;
+      font-family: @CeraProBold;
+      color: @color-text-blue;
+      margin-bottom: 47px;
+      width: 100%;
+    }
+
+    .block-tables {
+      width: 49%;
+
+      .table {
+        width: 100%;
+
+        &>tbody {
+          &>tr {
+            &>td {
+              position: relative;
+              padding: 5px 0 17px;
+              font-size: 18px;
+              line-height: 100%;
+              color: @color-text-blue;
+              &:before {
+                content: '';
+                position: absolute;
+                bottom: 12px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px dashed @bg-blue-darken;
+                opacity: .5;
+              }
+              &.left-td {
+                width: 70%;
+                font-family: @GilroyRegular;
+                font-weight: bold;
+              }
+              &.right-td {
+                width: 30%;
+                text-align: right;
+                opacity: .5;
+                font-family: @GilroyMedium;
+                &:before {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
   }
 }
 

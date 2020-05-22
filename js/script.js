@@ -83,7 +83,6 @@ $(document).ready(function() {
 });
 
 
-// Crop title in the News
 $(function() {
     (function cropTitle() {
         $(".popular-card-title").each(function() {
@@ -123,24 +122,6 @@ function check_if_in_view() {
         }
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 $('.slider-full').slick({
     slidesToShow: 1,
@@ -194,12 +175,15 @@ $(".burger-menu").on('click',function () {
     $(this).toggleClass("open");
     $("body").toggleClass("menu-on");
 });
-$('.content-wrap,.menu-on').on('click', function(e) {
-    if (e.target !== this) {
-        $("body").removeClass('menu-on');
-        $(".burger-menu").removeClass("open");
-    }
-});
+
+
+
+
+
+
+
+
+
 
 
 $(window).on('scroll', function () {
