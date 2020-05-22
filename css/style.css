@@ -1690,6 +1690,74 @@ footer .footer-down .link-down a:hover {
   line-height: 100%;
   color: #ffffff;
 }
+.basket-empty {
+  width: 100%;
+  padding: 130px 0 160px;
+}
+.basket-empty .bastet-inner {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.basket-empty .bastet-inner .face {
+  margin-bottom: 36px;
+}
+.basket-empty .bastet-inner .caption {
+  font-size: 36px;
+  line-height: 100%;
+  color: #4b5d8c;
+  font-family: 'Cera Pro Bold', sans-serif;
+  margin-bottom: 20px;
+}
+.basket-empty .bastet-inner .text {
+  font-size: 16px;
+  line-height: 150%;
+  color: #4b5d8c;
+  font-family: 'Cera Pro Regular', sans-serif;
+  margin-bottom: 40px;
+}
+.basket-empty .bastet-inner .btn-main {
+  display: inline-block;
+  width: 225px;
+  height: 52px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fc3504;
+  border-radius: 5px;
+  position: relative;
+  transition: ease-in-out 0.6s;
+  margin: 0 auto;
+}
+.basket-empty .bastet-inner .btn-main:before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fc3504;
+  opacity: 0.4;
+  filter: blur(15px);
+  z-index: 0;
+}
+.basket-empty .bastet-inner .btn-main:hover {
+  background-color: #ed1c1c;
+}
+.basket-empty .bastet-inner .btn-main span {
+  z-index: 1;
+  position: relative;
+  font-family: 'Cera Pro Regular', sans-serif;
+  font-size: 16px;
+  line-height: 100%;
+  color: #ffffff;
+}
 @keyframes sportCard {
   from {
     transform: translateX(-200px);

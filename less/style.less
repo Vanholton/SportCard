@@ -1961,6 +1961,78 @@ footer {
 }
 
 // -------
+// ---- ~ BASKET EMPTY
+// _______
+.basket-empty {
+  width: 100%;
+  padding: 130px 0 160px;
+
+  .bastet-inner {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    .face {
+      margin-bottom: 36px;
+    }
+    .caption {
+      font-size: 36px;
+      line-height: 100%;
+      color: @color-text-blue;
+      font-family: @CeraProBold;
+      margin-bottom: 20px;
+    }
+    .text {
+      font-size: 16px;
+      line-height: 150%;
+      color: @color-text-blue;
+      font-family: @CeraProRegular;
+      margin-bottom: 40px;
+    }
+    .btn-main {
+      display: inline-block;
+      width: 225px;
+      height: 52px;
+      .flex();
+      align-items: center;
+      justify-content: center;
+      background-color: @bg-red;
+      border-radius: 5px;
+      position: relative;
+      transition: ease-in-out .6s;
+      margin: 0 auto;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 90%;
+        top: 15px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-color: @bg-red;
+        opacity: 0.4;
+        filter: blur(15px);
+        z-index: 0;
+      }
+
+      &:hover {
+        background-color: @bg-red-hover;
+      }
+
+      span {
+        z-index: 1;
+        position: relative;
+        font-family: @CeraProRegular;
+        font-size: 16px;
+        line-height: 100%;
+        color: @color-text-white;
+      }
+    }
+  }
+}
+
+// -------
 // ---- ~ ANIMATION
 // _______
 @keyframes sportCard {
