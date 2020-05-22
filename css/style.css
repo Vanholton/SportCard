@@ -1309,6 +1309,9 @@ footer .footer-down .link-down a:hover {
   width: 100%;
   overflow: hidden;
 }
+.contact-form.white {
+  background: #ffffff;
+}
 .contact-form .contact-wrap {
   width: 100%;
   position: relative;
@@ -1475,6 +1478,9 @@ footer .footer-down .link-down a:hover {
   width: 100%;
   background: #ffffff;
   padding: 90px 0 130px;
+}
+.contact-and-map.grey {
+  background: #f8f8f8;
 }
 .contact-and-map .caption {
   margin-bottom: 60px;
