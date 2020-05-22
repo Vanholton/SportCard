@@ -328,7 +328,6 @@ a {
   width: 100%;
   height: 96px;
   position: relative;
-  margin-bottom: 36px;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -1626,7 +1625,7 @@ footer .footer-down .link-down a:hover {
 }
 .content-block {
   width: 100%;
-  padding: 30px 0 90px;
+  padding: 65px 0 90px;
 }
 .content-block .content-inner {
   width: 100%;
@@ -1644,6 +1643,7 @@ footer .footer-down .link-down a:hover {
   line-height: 150%;
   color: #4b5d8c;
   font-family: 'Cera Pro Regular', sans-serif;
+  margin-bottom: 40px;
 }
 .content-block .content-inner p {
   margin-bottom: 20px;
@@ -1690,33 +1690,64 @@ footer .footer-down .link-down a:hover {
   line-height: 100%;
   color: #ffffff;
 }
-.basket-empty {
+.basket-empty,
+.thanks-page {
   width: 100%;
   padding: 130px 0 160px;
 }
-.basket-empty .bastet-inner {
+.basket-empty .bastet-inner,
+.thanks-page .bastet-inner,
+.basket-empty .thanks-inner,
+.thanks-page .thanks-inner {
   width: 100%;
   position: relative;
   text-align: center;
 }
-.basket-empty .bastet-inner .face {
+.basket-empty .bastet-inner .face,
+.thanks-page .bastet-inner .face,
+.basket-empty .thanks-inner .face,
+.thanks-page .thanks-inner .face,
+.basket-empty .bastet-inner .like,
+.thanks-page .bastet-inner .like,
+.basket-empty .thanks-inner .like,
+.thanks-page .thanks-inner .like {
   margin-bottom: 36px;
+  width: 100%;
 }
-.basket-empty .bastet-inner .caption {
+.basket-empty .bastet-inner .face img,
+.thanks-page .bastet-inner .face img,
+.basket-empty .thanks-inner .face img,
+.thanks-page .thanks-inner .face img,
+.basket-empty .bastet-inner .like img,
+.thanks-page .bastet-inner .like img,
+.basket-empty .thanks-inner .like img,
+.thanks-page .thanks-inner .like img {
+  width: 86px;
+}
+.basket-empty .bastet-inner .caption,
+.thanks-page .bastet-inner .caption,
+.basket-empty .thanks-inner .caption,
+.thanks-page .thanks-inner .caption {
   font-size: 36px;
   line-height: 100%;
   color: #4b5d8c;
   font-family: 'Cera Pro Bold', sans-serif;
   margin-bottom: 20px;
 }
-.basket-empty .bastet-inner .text {
+.basket-empty .bastet-inner .text,
+.thanks-page .bastet-inner .text,
+.basket-empty .thanks-inner .text,
+.thanks-page .thanks-inner .text {
   font-size: 16px;
   line-height: 150%;
   color: #4b5d8c;
   font-family: 'Cera Pro Regular', sans-serif;
   margin-bottom: 40px;
 }
-.basket-empty .bastet-inner .btn-main {
+.basket-empty .bastet-inner .btn-main,
+.thanks-page .bastet-inner .btn-main,
+.basket-empty .thanks-inner .btn-main,
+.thanks-page .thanks-inner .btn-main {
   display: inline-block;
   width: 225px;
   height: 52px;
@@ -1733,7 +1764,10 @@ footer .footer-down .link-down a:hover {
   transition: ease-in-out 0.6s;
   margin: 0 auto;
 }
-.basket-empty .bastet-inner .btn-main:before {
+.basket-empty .bastet-inner .btn-main:before,
+.thanks-page .bastet-inner .btn-main:before,
+.basket-empty .thanks-inner .btn-main:before,
+.thanks-page .thanks-inner .btn-main:before {
   content: '';
   position: absolute;
   width: 80%;
@@ -1747,10 +1781,16 @@ footer .footer-down .link-down a:hover {
   filter: blur(15px);
   z-index: 0;
 }
-.basket-empty .bastet-inner .btn-main:hover {
+.basket-empty .bastet-inner .btn-main:hover,
+.thanks-page .bastet-inner .btn-main:hover,
+.basket-empty .thanks-inner .btn-main:hover,
+.thanks-page .thanks-inner .btn-main:hover {
   background-color: #ed1c1c;
 }
-.basket-empty .bastet-inner .btn-main span {
+.basket-empty .bastet-inner .btn-main span,
+.thanks-page .bastet-inner .btn-main span,
+.basket-empty .thanks-inner .btn-main span,
+.thanks-page .thanks-inner .btn-main span {
   z-index: 1;
   position: relative;
   font-family: 'Cera Pro Regular', sans-serif;
@@ -2036,6 +2076,55 @@ footer .footer-down .link-down a:hover {
   }
   footer .footer-down .link-down a {
     font-size: 13px;
+  }
+  .content-block .content-inner .title {
+    font-size: 34px;
+  }
+  .content-block .content-inner .btn-more {
+    width: 210px;
+    height: 50px;
+  }
+  .content-block .content-inner .btn-more span {
+    font-size: 15px;
+  }
+  .basket-empty,
+  .thanks-page {
+    padding: 130px 0 160px;
+  }
+  .basket-empty .bastet-inner .face,
+  .thanks-page .bastet-inner .face,
+  .basket-empty .thanks-inner .face,
+  .thanks-page .thanks-inner .face,
+  .basket-empty .bastet-inner .like,
+  .thanks-page .bastet-inner .like,
+  .basket-empty .thanks-inner .like,
+  .thanks-page .thanks-inner .like {
+    margin-bottom: 36px;
+  }
+  .basket-empty .bastet-inner .caption,
+  .thanks-page .bastet-inner .caption,
+  .basket-empty .thanks-inner .caption,
+  .thanks-page .thanks-inner .caption {
+    font-size: 34px;
+  }
+  .basket-empty .bastet-inner .text,
+  .thanks-page .bastet-inner .text,
+  .basket-empty .thanks-inner .text,
+  .thanks-page .thanks-inner .text {
+    font-size: 15px;
+  }
+  .basket-empty .bastet-inner .btn-main,
+  .thanks-page .bastet-inner .btn-main,
+  .basket-empty .thanks-inner .btn-main,
+  .thanks-page .thanks-inner .btn-main {
+    width: 210px;
+    height: 50px;
+  }
+  .basket-empty .bastet-inner .btn-main span,
+  .thanks-page .bastet-inner .btn-main span,
+  .basket-empty .thanks-inner .btn-main span,
+  .thanks-page .thanks-inner .btn-main span {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 1279px) {
@@ -2389,6 +2478,68 @@ footer .footer-down .link-down a:hover {
   footer .footer-content .footer-block.first .comp-name img {
     width: 180px;
   }
+  .content-block .content-inner .title {
+    font-size: 30px;
+  }
+  .content-block .content-inner .text {
+    font-size: 15px;
+  }
+  .content-block .content-inner .btn-more {
+    width: 200px;
+    height: 46px;
+  }
+  .content-block .content-inner .btn-more span {
+    font-size: 14px;
+  }
+  .basket-empty,
+  .thanks-page {
+    padding: 110px 0 150px;
+  }
+  .basket-empty .bastet-inner .face,
+  .thanks-page .bastet-inner .face,
+  .basket-empty .thanks-inner .face,
+  .thanks-page .thanks-inner .face,
+  .basket-empty .bastet-inner .like,
+  .thanks-page .bastet-inner .like,
+  .basket-empty .thanks-inner .like,
+  .thanks-page .thanks-inner .like {
+    margin-bottom: 36px;
+  }
+  .basket-empty .bastet-inner .face img,
+  .thanks-page .bastet-inner .face img,
+  .basket-empty .thanks-inner .face img,
+  .thanks-page .thanks-inner .face img,
+  .basket-empty .bastet-inner .like img,
+  .thanks-page .bastet-inner .like img,
+  .basket-empty .thanks-inner .like img,
+  .thanks-page .thanks-inner .like img {
+    width: 82px;
+  }
+  .basket-empty .bastet-inner .caption,
+  .thanks-page .bastet-inner .caption,
+  .basket-empty .thanks-inner .caption,
+  .thanks-page .thanks-inner .caption {
+    font-size: 30px;
+  }
+  .basket-empty .bastet-inner .text,
+  .thanks-page .bastet-inner .text,
+  .basket-empty .thanks-inner .text,
+  .thanks-page .thanks-inner .text {
+    font-size: 15px;
+  }
+  .basket-empty .bastet-inner .btn-main,
+  .thanks-page .bastet-inner .btn-main,
+  .basket-empty .thanks-inner .btn-main,
+  .thanks-page .thanks-inner .btn-main {
+    width: 200px;
+    height: 46px;
+  }
+  .basket-empty .bastet-inner .btn-main span,
+  .thanks-page .bastet-inner .btn-main span,
+  .basket-empty .thanks-inner .btn-main span,
+  .thanks-page .thanks-inner .btn-main span {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 1023px) {
   .header {
@@ -2717,6 +2868,71 @@ footer .footer-down .link-down a:hover {
     100% {
       transform: translateY(-20px);
     }
+  }
+  .content-block {
+    padding: 50px 0 80px;
+  }
+  .content-block .content-inner .title {
+    font-size: 28px;
+  }
+  .content-block .content-inner .text {
+    font-size: 14px;
+  }
+  .content-block .content-inner .btn-more {
+    width: 200px;
+    height: 46px;
+  }
+  .content-block .content-inner .btn-more span {
+    font-size: 14px;
+  }
+  .basket-empty,
+  .thanks-page {
+    padding: 100px 0 140px;
+  }
+  .basket-empty .bastet-inner .face,
+  .thanks-page .bastet-inner .face,
+  .basket-empty .thanks-inner .face,
+  .thanks-page .thanks-inner .face,
+  .basket-empty .bastet-inner .like,
+  .thanks-page .bastet-inner .like,
+  .basket-empty .thanks-inner .like,
+  .thanks-page .thanks-inner .like {
+    margin-bottom: 30px;
+  }
+  .basket-empty .bastet-inner .face img,
+  .thanks-page .bastet-inner .face img,
+  .basket-empty .thanks-inner .face img,
+  .thanks-page .thanks-inner .face img,
+  .basket-empty .bastet-inner .like img,
+  .thanks-page .bastet-inner .like img,
+  .basket-empty .thanks-inner .like img,
+  .thanks-page .thanks-inner .like img {
+    width: 76px;
+  }
+  .basket-empty .bastet-inner .caption,
+  .thanks-page .bastet-inner .caption,
+  .basket-empty .thanks-inner .caption,
+  .thanks-page .thanks-inner .caption {
+    font-size: 28px;
+  }
+  .basket-empty .bastet-inner .text,
+  .thanks-page .bastet-inner .text,
+  .basket-empty .thanks-inner .text,
+  .thanks-page .thanks-inner .text {
+    font-size: 14px;
+  }
+  .basket-empty .bastet-inner .btn-main,
+  .thanks-page .bastet-inner .btn-main,
+  .basket-empty .thanks-inner .btn-main,
+  .thanks-page .thanks-inner .btn-main {
+    width: 200px;
+    height: 46px;
+  }
+  .basket-empty .bastet-inner .btn-main span,
+  .thanks-page .bastet-inner .btn-main span,
+  .basket-empty .thanks-inner .btn-main span,
+  .thanks-page .thanks-inner .btn-main span {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -3116,6 +3332,71 @@ footer .footer-down .link-down a:hover {
     font-size: 13px;
     line-height: 13px;
   }
+  .content-block {
+    padding: 40px 0 70px;
+  }
+  .content-block .content-inner .title {
+    font-size: 24px;
+  }
+  .content-block .content-inner .text {
+    font-size: 13px;
+  }
+  .content-block .content-inner .btn-more {
+    width: 190px;
+    height: 42px;
+  }
+  .content-block .content-inner .btn-more span {
+    font-size: 13px;
+  }
+  .basket-empty,
+  .thanks-page {
+    padding: 80px 0 120px;
+  }
+  .basket-empty .bastet-inner .face,
+  .thanks-page .bastet-inner .face,
+  .basket-empty .thanks-inner .face,
+  .thanks-page .thanks-inner .face,
+  .basket-empty .bastet-inner .like,
+  .thanks-page .bastet-inner .like,
+  .basket-empty .thanks-inner .like,
+  .thanks-page .thanks-inner .like {
+    margin-bottom: 25px;
+  }
+  .basket-empty .bastet-inner .face img,
+  .thanks-page .bastet-inner .face img,
+  .basket-empty .thanks-inner .face img,
+  .thanks-page .thanks-inner .face img,
+  .basket-empty .bastet-inner .like img,
+  .thanks-page .bastet-inner .like img,
+  .basket-empty .thanks-inner .like img,
+  .thanks-page .thanks-inner .like img {
+    width: 64px;
+  }
+  .basket-empty .bastet-inner .caption,
+  .thanks-page .bastet-inner .caption,
+  .basket-empty .thanks-inner .caption,
+  .thanks-page .thanks-inner .caption {
+    font-size: 24px;
+  }
+  .basket-empty .bastet-inner .text,
+  .thanks-page .bastet-inner .text,
+  .basket-empty .thanks-inner .text,
+  .thanks-page .thanks-inner .text {
+    font-size: 13px;
+  }
+  .basket-empty .bastet-inner .btn-main,
+  .thanks-page .bastet-inner .btn-main,
+  .basket-empty .thanks-inner .btn-main,
+  .thanks-page .thanks-inner .btn-main {
+    width: 190px;
+    height: 42px;
+  }
+  .basket-empty .bastet-inner .btn-main span,
+  .thanks-page .bastet-inner .btn-main span,
+  .basket-empty .thanks-inner .btn-main span,
+  .thanks-page .thanks-inner .btn-main span {
+    font-size: 13px;
+  }
 }
 @media screen and (max-width: 480px) {
   .header .wrap-head .left-part .logo {
@@ -3450,5 +3731,70 @@ footer .footer-down .link-down a:hover {
     padding: 9px 24px;
     font-size: 12px;
     line-height: 12px;
+  }
+  .content-block {
+    padding: 30px 0 60px;
+  }
+  .content-block .content-inner .title {
+    font-size: 22px;
+  }
+  .content-block .content-inner .text {
+    font-size: 12px;
+  }
+  .content-block .content-inner .btn-more {
+    width: 170px;
+    height: 38px;
+  }
+  .content-block .content-inner .btn-more span {
+    font-size: 12px;
+  }
+  .basket-empty,
+  .thanks-page {
+    padding: 70px 0 110px;
+  }
+  .basket-empty .bastet-inner .face,
+  .thanks-page .bastet-inner .face,
+  .basket-empty .thanks-inner .face,
+  .thanks-page .thanks-inner .face,
+  .basket-empty .bastet-inner .like,
+  .thanks-page .bastet-inner .like,
+  .basket-empty .thanks-inner .like,
+  .thanks-page .thanks-inner .like {
+    margin-bottom: 20px;
+  }
+  .basket-empty .bastet-inner .face img,
+  .thanks-page .bastet-inner .face img,
+  .basket-empty .thanks-inner .face img,
+  .thanks-page .thanks-inner .face img,
+  .basket-empty .bastet-inner .like img,
+  .thanks-page .bastet-inner .like img,
+  .basket-empty .thanks-inner .like img,
+  .thanks-page .thanks-inner .like img {
+    width: 58px;
+  }
+  .basket-empty .bastet-inner .caption,
+  .thanks-page .bastet-inner .caption,
+  .basket-empty .thanks-inner .caption,
+  .thanks-page .thanks-inner .caption {
+    font-size: 22px;
+  }
+  .basket-empty .bastet-inner .text,
+  .thanks-page .bastet-inner .text,
+  .basket-empty .thanks-inner .text,
+  .thanks-page .thanks-inner .text {
+    font-size: 12px;
+  }
+  .basket-empty .bastet-inner .btn-main,
+  .thanks-page .bastet-inner .btn-main,
+  .basket-empty .thanks-inner .btn-main,
+  .thanks-page .thanks-inner .btn-main {
+    width: 170px;
+    height: 38px;
+  }
+  .basket-empty .bastet-inner .btn-main span,
+  .thanks-page .bastet-inner .btn-main span,
+  .basket-empty .thanks-inner .btn-main span,
+  .thanks-page .thanks-inner .btn-main span {
+    font-size: 12px;
   }
 }
