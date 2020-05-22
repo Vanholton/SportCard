@@ -1798,6 +1798,237 @@ footer .footer-down .link-down a:hover {
   line-height: 100%;
   color: #ffffff;
 }
+.catalog {
+  width: 100%;
+  position: relative;
+  padding: 60px 0;
+}
+.catalog .catalog-inner {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.catalog .catalog-inner .sidebar-filter {
+  width: 22%;
+}
+.catalog .catalog-inner .catalog-cards {
+  width: 74%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card {
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  position: relative;
+  outline: 0;
+  transition: ease-in-out 0.6s;
+  width: 32%;
+  margin-bottom: 20px;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card:before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 131px;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #000000;
+  opacity: 0.1;
+  filter: blur(40px);
+  z-index: -1;
+  transition: ease-in-out 0.6s;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card:hover {
+  box-shadow: 0 2px 7px rgba(75, 93, 140, 0.5);
+}
+.catalog .catalog-inner .catalog-cards .catalog-card:hover:before {
+  background-color: transparent;
+  filter: blur(0);
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 30px 55px;
+  position: relative;
+  flex-wrap: wrap;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .labels {
+  position: absolute;
+  top: 22px;
+  right: 0;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .labels .new,
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .labels .discount {
+  width: 68px;
+  height: 31px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cera Pro Regular', sans-serif;
+  font-size: 16px;
+  line-height: 100%;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .labels .new {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 3px;
+  background: #1d3dff;
+  box-shadow: 0 0 20px rgba(29, 61, 255, 0.4);
+  margin-bottom: 5px;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .labels .discount {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 3px;
+  background: #fc3504;
+  box-shadow: 0 0 20px rgba(252, 53, 4, 0.4);
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .image {
+  width: 144px;
+  height: 187px;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .image img {
+  width: 100%;
+  height: 100%;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .tag {
+  font-family: 'Cera Pro Light', sans-serif;
+  color: #4b5d8c;
+  opacity: .5;
+  font-size: 22px;
+  line-height: 43px;
+  height: 43px;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-title {
+  height: 70px;
+  margin-bottom: 20px;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-title a {
+  font-family: 'Cera Pro Bold', sans-serif;
+  font-size: 18px;
+  line-height: 100%;
+  color: #4b5d8c;
+  transition: ease-in-out 0.5s;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-title a:hover {
+  opacity: .6;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-price {
+  font-family: 'Cera Pro Regular', sans-serif;
+  font-size: 37px;
+  line-height: 100%;
+  color: #4b5d8c;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 35px;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-price small {
+  font-family: 'Cera Pro Regular', sans-serif;
+  font-size: 22px;
+  line-height: 100%;
+  opacity: .5;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-price span {
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0px 0px 20px rgba(29, 61, 255, 0.4);
+  top: -7px;
+  right: -58px;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  font-family: 'Cera Pro Light', sans-serif;
+  font-size: 16px;
+  text-decoration: line-through;
+  padding: 1px 8px 2px;
+  line-height: 100%;
+  background: #1d3dff;
+  color: #ffffff;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-price span:before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  bottom: 0;
+  border: 4px solid transparent;
+  border-right: 0 solid #1d3dff;
+  border-bottom: 14px solid #1d3dff;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 4px;
+  transition: all .4s;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-price span:after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  bottom: 1px;
+  border: 4px solid transparent;
+  border-left: 0 solid #1d3dff;
+  border-top: 14px solid #1d3dff;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 5px;
+  transition: all .4s;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-btn {
+  position: relative;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-btn a {
+  display: inline-block;
+  width: 151px;
+  height: 52px;
+  background-color: #fc3504;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  transition: ease-in-out 0.6s;
+  line-height: 52px;
+  font-family: 'Cera Pro Regular', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-btn a:before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 90%;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fc3504;
+  opacity: 0.3;
+  filter: blur(15px);
+  z-index: -1;
+}
+.catalog .catalog-inner .catalog-cards .catalog-card .catalog-card-inner .catalog-card-btn a:hover {
+  background-color: #ed1c1c;
+}
+.catalog .catalog-inner .pagination {
+  width: 100%;
+}
 @keyframes sportCard {
   from {
     transform: translateX(-200px);

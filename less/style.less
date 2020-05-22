@@ -2037,6 +2037,252 @@ footer {
 }
 
 // -------
+// ---- ~ CATALOG PAGE
+// _______
+.catalog {
+  width: 100%;
+  position: relative;
+  padding: 60px 0;
+
+  .catalog-inner {
+    width: 100%;
+    .flex();
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .sidebar-filter {
+      width: 22%;
+    }
+
+    .catalog-cards {
+      width: 74%;
+      .flex();
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .catalog-card {
+        background: @bg-white;
+        border: 1px solid @bg-gray3;
+        border-radius: 5px;
+        position: relative;
+        outline: 0;
+        transition: ease-in-out .6s;
+        width: 32%;
+        margin-bottom: 20px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 70%;
+          height: 131px;
+          bottom: -10px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          background-color: @bg-black;
+          opacity: 0.1;
+          filter: blur(40px);
+          z-index: -1;
+          transition: ease-in-out .6s;
+        }
+
+        &:hover {
+          box-shadow: 0 2px 7px rgba(75, 93, 140, .5);
+
+          &:before {
+            background-color: transparent;
+            filter: blur(0);
+          }
+        }
+
+        .catalog-card-inner {
+          overflow: hidden;
+          .flex();
+          padding: 40px 30px 55px;
+          position: relative;
+          flex-wrap: wrap;
+          flex-flow: column;
+          align-items: center;
+          text-align: center;
+
+          .labels {
+            position: absolute;
+            top: 22px;
+            right: 0;
+
+            .new, .discount {
+              width: 68px;
+              height: 31px;
+              .flex();
+              align-items: center;
+              justify-content: center;
+              font-family: @CeraProRegular;
+              font-size: 16px;
+              line-height: 100%;
+              color: @color-text-white;
+              text-transform: uppercase;
+            }
+
+            .new {
+              border-bottom-left-radius: 10px;
+              border-top-left-radius: 3px;
+              background: @bg-blue;
+              box-shadow: 0 0 20px rgba(29, 61, 255, 0.4);
+              margin-bottom: 5px;
+            }
+
+            .discount {
+              border-top-left-radius: 10px;
+              border-bottom-left-radius: 3px;
+              background: @bg-red;
+              box-shadow: 0 0 20px rgba(252, 53, 4, 0.4);
+            }
+          }
+
+          .image {
+            width: 144px;
+            height: 187px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .tag {
+            font-family: @CeraProLight;
+            color: @color-text-blue;
+            opacity: .5;
+            font-size: 22px;
+            line-height: 43px;
+            height: 43px;
+          }
+
+          .catalog-card-title {
+            height: 70px;
+
+            a {
+              font-family: @CeraProBold;
+              font-size: 18px;
+              line-height: 100%;
+              color: @color-text-blue;
+              transition: ease-in-out .5s;
+
+              &:hover {
+                opacity: .6;
+              }
+            }
+
+            margin-bottom: 20px;
+          }
+
+          .catalog-card-price {
+            font-family: @CeraProRegular;
+            font-size: 37px;
+            line-height: 100%;
+            color: @color-text-blue;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 35px;
+
+            small {
+              font-family: @CeraProRegular;
+              font-size: 22px;
+              line-height: 100%;
+              opacity: .5;
+            }
+
+            span {
+              display: inline-block;
+              position: absolute;
+              box-shadow: 0px 0px 20px rgba(29, 61, 255, 0.4);
+              top: -7px;
+              right: -58px;
+              border-top-left-radius: 7px;
+              border-bottom-right-radius: 7px;
+              font-family: @CeraProLight;
+              font-size: 16px;
+              text-decoration: line-through;
+              padding: 1px 8px 2px;
+              line-height: 100%;
+              background: @bg-blue;
+              color: @color-text-white;
+
+              &:before {
+                content: '';
+                position: absolute;
+                left: -4px;
+                bottom: 0;
+                border: 4px solid transparent;
+                border-right: 0 solid @bg-blue;
+                border-bottom: 14px solid @bg-blue;
+                border-top-right-radius: 5px;
+                border-bottom-left-radius: 4px;
+                transition: all .4s;
+              }
+
+              &:after {
+                content: '';
+                position: absolute;
+                right: -4px;
+                bottom: 1px;
+                border: 4px solid transparent;
+                border-left: 0 solid @bg-blue;
+                border-top: 14px solid @bg-blue;
+                border-top-right-radius: 4px;
+                border-bottom-left-radius: 5px;
+                transition: all .4s;
+              }
+            }
+          }
+
+          .catalog-card-btn {
+            position: relative;
+
+            a {
+              display: inline-block;
+              width: 151px;
+              height: 52px;
+              background-color: @bg-red;
+              border-radius: 5px;
+              color: @color-text-white;
+              font-size: 16px;
+              transition: ease-in-out .6s;
+              line-height: 52px;
+              font-family: @CeraProRegular;
+              position: relative;
+              z-index: 1;
+
+              &:before {
+                content: '';
+                position: absolute;
+                width: 70%;
+                height: 90%;
+                top: 15px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                background-color: @bg-red;
+                opacity: 0.3;
+                filter: blur(15px);
+                z-index: -1;
+              }
+
+              &:hover {
+                background-color: @bg-red-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .pagination {
+      width: 100%;
+    }
+  }
+}
+
+// -------
 // ---- ~ ANIMATION
 // _______
 @keyframes sportCard {
