@@ -78,14 +78,14 @@ $('.slider-popular-card').slick({
     ]
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     $(".right-part, .header").removeClass("preload");
 });
 
 
-$(function() {
+$(function () {
     (function cropTitle() {
-        $(".popular-card-title").each(function() {
+        $(".popular-card-title").each(function () {
             var $title = $(this).find("a");
 
             while ($title.height() > $(this).height()) {
@@ -107,11 +107,11 @@ function check_if_in_view() {
     let window_top_position = $window.scrollTop();
     let window_bottom_position = (window_top_position + window_height);
 
-    $.each($animation_elements, function() {
+    $.each($animation_elements, function () {
         let $element = $(this);
         let element_height = $element.outerHeight();
-        let element_top_position = $element.offset().top + 80;
-        let element_bottom_position = ((element_top_position - 160) + element_height);
+        let element_top_position = $element.offset().top + 60;
+        let element_bottom_position = ((element_top_position - 140) + element_height);
 
         //check to see if this current container is within viewport
         if ((element_bottom_position >= window_top_position) &&
@@ -129,7 +129,17 @@ $('.slider-full').slick({
     arrows: false,
     dots: false,
     fade: true,
-    asNavFor: '.slider-nav'
+    asNavFor: '.slider-nav',
+    responsive: [
+        {
+            breakpoint: 481,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+            }
+        }
+    ]
 });
 $('.slider-nav').slick({
     slidesToShow: 3,
@@ -144,46 +154,26 @@ $('.slider-nav').slick({
             breakpoint: 1240,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 1,
-                vertical: false,
-                verticalSwiping: false
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-				vertical: false,
-                verticalSwiping: false
+                slidesToScroll: 1
             }
         },
         {
             breakpoint: 640,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 1, 
-				verticalSwiping: true,
-				focusOnSelect: true,
-    			focusOnSelect: true
+                slidesToScroll: 1,
+                verticalSwiping: true,
+                focusOnSelect: true,
+                focusOnSelect: true
             }
         }
     ]
 });
 
-$(".burger-menu").on('click',function () {
+$(".burger-menu").on('click', function () {
     $(this).toggleClass("open");
     $("body").toggleClass("menu-on");
 });
-
-
-
-
-
-
-
-
-
 
 
 $(window).on('scroll', function () {
@@ -203,7 +193,9 @@ function delivery() {
         content.addClass('open');
     });
 }
+
 delivery();
+
 function payment() {
     $('.payment-block label').on('click', function () {
         $('.payment-block .input-text').removeClass('open');
@@ -212,32 +204,42 @@ function payment() {
         content.addClass('open');
     });
 }
+
 payment();
 
 function delayedAlert() {
     let timeoutID = window.setTimeout(expandLogo, 1000);
 }
+
 function expandLogo() {
     $('.main-banner .title, .main-banner .description, .main-banner .banner-button').addClass('is-move');
 }
+
 delayedAlert();
 
 function addtoFavorite() {
     $('.add_to_card,.add-to-favorite').on('click', function () {
         $(this).toggleClass('added');
     });
-}addtoFavorite();
+}
+
+addtoFavorite();
 
 function openFilter() {
     $('.btn-filter').on('click', function () {
         $('.filter-left').toggleClass('open-filter');
     });
-}openFilter();
+}
+
+openFilter();
+
 function closeFilter() {
     $('.close-filter').on('click', function () {
         $('.filter-left').toggleClass('open-filter');
     });
-}closeFilter();
+}
+
+closeFilter();
 
 function spoiler() {
     $('.__header').on('click', function () {
@@ -263,9 +265,11 @@ function spoiler() {
         }
 
     });
-}spoiler();
+}
 
-$(document).ready(function() {
+spoiler();
+
+$(document).ready(function () {
 
     let $wrapper = $('.tab-wrapper'),
         $allTabs = $wrapper.find('.tab-content > .tab'),
@@ -274,15 +278,15 @@ $(document).ready(function() {
     $allTabs.not(':first-of-type').hide();
     $tabMenu.filter(':first-of-type').find(':first').width('100%');
 
-    $tabMenu.each(function(i) {
-        $(this).attr('data-tab', 'tab'+i);
+    $tabMenu.each(function (i) {
+        $(this).attr('data-tab', 'tab' + i);
     });
 
-    $allTabs.each(function(i) {
-        $(this).attr('data-tab', 'tab'+i);
+    $allTabs.each(function (i) {
+        $(this).attr('data-tab', 'tab' + i);
     });
 
-    $tabMenu.on('click', function() {
+    $tabMenu.on('click', function () {
 
         let dataTab = $(this).data('tab'),
             $getWrapper = $(this).closest($wrapper);
@@ -290,7 +294,7 @@ $(document).ready(function() {
         $getWrapper.find($tabMenu).removeClass('active');
         $(this).addClass('active');
         $getWrapper.find($allTabs).hide();
-        $getWrapper.find($allTabs).filter('[data-tab='+dataTab+']').show();
+        $getWrapper.find($allTabs).filter('[data-tab=' + dataTab + ']').show();
     });
 
 });
