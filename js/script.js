@@ -123,52 +123,62 @@ function check_if_in_view() {
     });
 }
 
-$('.slider-full').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: false,
-    fade: true,
-    asNavFor: '.slider-nav',
-    responsive: [
-        {
-            breakpoint: 481,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
+
+if($('.slider-full .item').length > 1) {
+    $('.slider-full').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        fade: true,
+        asNavFor: '.slider-nav',
+        responsive: [
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
             }
-        }
-    ]
-});
-$('.slider-nav').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.slider-full',
-    dots: false,
-    vertical: true,
-    verticalSwiping: true,
-    focusOnSelect: true,
-    responsive: [
-        {
-            breakpoint: 1240,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1
+        ]
+    });
+} else {
+    $('.slider-full').addClass('one-item');
+}
+
+if($('.slider-nav .item').length > 1) {
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-full',
+        dots: false,
+        vertical: true,
+        verticalSwiping: true,
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 1240,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    verticalSwiping: true,
+                    focusOnSelect: true,
+                    focusOnSelect: true
+                }
             }
-        },
-        {
-            breakpoint: 640,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                verticalSwiping: true,
-                focusOnSelect: true,
-                focusOnSelect: true
-            }
-        }
-    ]
-});
+        ]
+    });
+} else {
+    $('.slider-nav').remove();
+}
 
 $(".burger-menu").on('click', function () {
     $(this).toggleClass("open");
