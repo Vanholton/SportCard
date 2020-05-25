@@ -250,7 +250,7 @@ a {
   border-bottom-right-radius: 6px;
   font-family: 'Cera Pro Regular', sans-serif;
   font-size: 12px;
-  padding: 1px 3px;
+  padding: 1px 6px;
   line-height: 100%;
   background: #fc3504;
   color: #ffffff;
@@ -2716,9 +2716,13 @@ input[type=checkbox] {
 .basket-page .basket-inner .your-order .card-wrap .card-order .image {
   width: 92px;
   height: 92px;
+  border: 1px solid #e9e9e9;
   text-align: center;
   padding: 10px;
   margin-right: 32px;
+  position: relative;
+  z-index: 0;
+  background-color: #ffffff;
 }
 .basket-page .basket-inner .your-order .card-wrap .card-order .image img {
   height: 100%;
@@ -2788,13 +2792,16 @@ input[type=checkbox] {
   opacity: 1;
   border: 1px solid #3f4e64;
 }
-.basket-page .basket-inner .your-order .card-wrap .card-order .info .price {
+.basket-page .basket-inner .your-order .card-wrap .card-order .price {
   color: #4b5d8c;
   font-family: 'Cera Pro Regular', sans-serif;
   font-size: 24px;
   line-height: 100%;
+  position: absolute;
+  bottom: 14px;
+  right: 0;
 }
-.basket-page .basket-inner .your-order .card-wrap .card-order .info .price small {
+.basket-page .basket-inner .your-order .card-wrap .card-order .price small {
   font-size: 16px;
   opacity: .5;
 }
@@ -3566,6 +3573,58 @@ input[type=checkbox] {
   .product .product-inner .product-content .title {
     font-size: 34px;
   }
+  .basket-page .basket-inner .your-order,
+  .basket-page .basket-inner .personal-info {
+    padding: 48px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .confirm-rule .checkbox__label {
+    font-size: 13px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button {
+    width: 222px;
+    height: 50px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button span {
+    font-size: 15px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price {
+    font-size: 34px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .name:before,
+  .basket-page .basket-inner .personal-info form .inputs .last-name:before {
+    top: 15px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .phone:before {
+    top: 14px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .mail:before {
+    top: 16px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .address:before {
+    top: 12px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .comment:before {
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'] {
+    height: 44px;
+    line-height: 44px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'],
+  .basket-page .basket-inner .personal-info form .inputs textarea {
+    font-size: 15px;
+    padding-left: 44px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price {
+    font-size: 34px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .title a {
+    font-size: 17px;
+  }
 }
 @media screen and (max-width: 1279px) {
   .container {
@@ -4052,6 +4111,65 @@ input[type=checkbox] {
   .product .product-inner .product-content .title {
     font-size: 28px;
   }
+  .basket-page .basket-inner .your-order,
+  .basket-page .basket-inner .personal-info {
+    padding: 34px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .confirm-rule .checkbox__label {
+    font-size: 12px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button {
+    width: 190px;
+    height: 46px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button span {
+    font-size: 14px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price {
+    font-size: 32px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .name:before,
+  .basket-page .basket-inner .personal-info form .inputs .last-name:before {
+    top: 14px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .phone:before {
+    top: 13px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .mail:before {
+    top: 15px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .address:before {
+    top: 11px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .comment:before {
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'] {
+    height: 42px;
+    line-height: 42px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'],
+  .basket-page .basket-inner .personal-info form .inputs textarea {
+    font-size: 14px;
+    padding-left: 42px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price {
+    font-size: 32px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .price {
+    font-size: 22px;
+    bottom: 19px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info {
+    width: 70%;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .title a {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 1023px) {
   .header {
@@ -4527,6 +4645,92 @@ input[type=checkbox] {
   .breads .breads-inner ul li span {
     font-size: 15px;
   }
+  .basket-page {
+    padding: 36px 0 76px;
+  }
+  .basket-page .basket-inner {
+    flex-wrap: wrap;
+  }
+  .basket-page .basket-inner .your-order,
+  .basket-page .basket-inner .personal-info {
+    padding: 34px 34px 40px;
+    width: 100%;
+  }
+  .basket-page .basket-inner .personal-info:before {
+    bottom: -10px;
+  }
+  .basket-page .basket-inner .personal-info form .caption {
+    margin-bottom: 25px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .confirm-rule .checkbox__label {
+    font-size: 12px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button {
+    width: 190px;
+    height: 46px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button span {
+    font-size: 14px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price {
+    font-size: 32px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .name:before,
+  .basket-page .basket-inner .personal-info form .inputs .last-name:before {
+    top: 14px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .phone:before {
+    top: 13px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .mail:before {
+    top: 15px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .address:before {
+    top: 11px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .comment:before {
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'] {
+    height: 42px;
+    line-height: 42px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'],
+  .basket-page .basket-inner .personal-info form .inputs textarea {
+    font-size: 14px;
+    padding-left: 42px;
+  }
+  .basket-page .basket-inner .your-order {
+    margin-bottom: 36px;
+  }
+  .basket-page .basket-inner .your-order .caption {
+    margin-bottom: 25px;
+  }
+  .basket-page .basket-inner .your-order:before {
+    bottom: -10px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price {
+    font-size: 32px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .image {
+    width: 85px;
+    height: 85px;
+    margin-right: 25px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info {
+    width: 65%;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .price {
+    font-size: 22px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .title a {
+    width: 100%;
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 767px) {
   .main-sport-card .wrap-sport-card {
@@ -4772,6 +4976,103 @@ input[type=checkbox] {
   .breads .breads-inner ul li a,
   .breads .breads-inner ul li span {
     font-size: 14px;
+  }
+  .basket-page {
+    padding: 36px 0 65px;
+  }
+  .basket-page .basket-inner {
+    flex-wrap: wrap;
+  }
+  .basket-page .basket-inner .your-order,
+  .basket-page .basket-inner .personal-info {
+    padding: 30px 30px 35px;
+    width: 100%;
+  }
+  .basket-page .basket-inner .personal-info:before {
+    bottom: -10px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method {
+    padding-bottom: 36px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method:before {
+    border-bottom: 1px dashed #c4c4c4;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method .radio .radio-text {
+    font-size: 17px;
+  }
+  .basket-page .basket-inner .personal-info form .caption {
+    font-size: 20px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .confirm-rule .checkbox__label {
+    font-size: 12px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button {
+    width: 200px;
+    height: 46px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button span {
+    font-size: 13px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price {
+    font-size: 30px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .name:before,
+  .basket-page .basket-inner .personal-info form .inputs .last-name:before {
+    top: 14px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .phone:before {
+    top: 13px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .mail:before {
+    top: 15px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .address:before {
+    top: 11px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .comment:before {
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'] {
+    height: 42px;
+    line-height: 42px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'],
+  .basket-page .basket-inner .personal-info form .inputs textarea {
+    font-size: 14px;
+    padding-left: 42px;
+  }
+  .basket-page .basket-inner .your-order {
+    margin-bottom: 36px;
+  }
+  .basket-page .basket-inner .your-order:before {
+    bottom: -10px;
+  }
+  .basket-page .basket-inner .your-order .caption {
+    font-size: 20px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price {
+    font-size: 30px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .image {
+    width: 75px;
+    height: 75px;
+    margin-right: 20px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .quantity {
+    margin-right: 0;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .quantity .number {
+    font-size: 20px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .title a {
+    font-size: 14px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .price {
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 639px) {
@@ -5168,6 +5469,122 @@ input[type=checkbox] {
   .breads .breads-inner ul li a,
   .breads .breads-inner ul li span {
     font-size: 13px;
+  }
+  .basket-page {
+    padding: 36px 0 65px;
+  }
+  .basket-page .basket-inner {
+    flex-wrap: wrap;
+  }
+  .basket-page .basket-inner .your-order,
+  .basket-page .basket-inner .personal-info {
+    padding: 30px 30px 35px;
+    width: 100%;
+  }
+  .basket-page .basket-inner .personal-info:before {
+    bottom: -10px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method {
+    padding-bottom: 36px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method:before {
+    border-bottom: 1px dashed #c4c4c4;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method .radio .radio-text {
+    font-size: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method .radio .radio-text .label {
+    margin-top: 3px;
+  }
+  .basket-page .basket-inner .personal-info form .caption {
+    font-size: 18px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .confirm-rule .checkbox__label {
+    font-size: 12px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button {
+    width: 190px;
+    height: 42px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button span {
+    font-size: 13px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price {
+    font-size: 26px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price small {
+    font-size: 18px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .name:before,
+  .basket-page .basket-inner .personal-info form .inputs .last-name:before {
+    top: 14px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .phone:before {
+    top: 13px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .mail:before {
+    top: 15px;
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .address:before {
+    top: 11px;
+    left: 19px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .comment:before {
+    left: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'] {
+    height: 42px;
+    line-height: 42px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'],
+  .basket-page .basket-inner .personal-info form .inputs textarea {
+    font-size: 14px;
+    padding-left: 42px;
+  }
+  .basket-page .basket-inner .your-order {
+    margin-bottom: 36px;
+  }
+  .basket-page .basket-inner .your-order:before {
+    bottom: -10px;
+  }
+  .basket-page .basket-inner .your-order .caption {
+    font-size: 18px;
+  }
+  .basket-page .basket-inner .your-order .total-block .left-part .check a,
+  .basket-page .basket-inner .your-order .total-block .left-part .reset a {
+    font-size: 13px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price small {
+    font-size: 18px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .continue-shopping a,
+  .basket-page .basket-inner .your-order .total-block .right-part .text {
+    font-size: 13px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .text {
+    margin-bottom: 6px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .image {
+    width: 70px;
+    height: 70px;
+    padding: 7px;
+    margin-right: 20px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .quantity .number {
+    font-size: 18px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .price {
+    font-size: 18px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .title a {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -5672,6 +6089,188 @@ input[type=checkbox] {
   }
   .breads .breads-inner ul li a,
   .breads .breads-inner ul li span {
+    font-size: 12px;
+  }
+  .basket-page {
+    padding: 26px 0 50px;
+  }
+  .basket-page .basket-inner {
+    flex-wrap: wrap;
+  }
+  .basket-page .basket-inner .your-order,
+  .basket-page .basket-inner .personal-info {
+    padding: 22px 22px 25px;
+  }
+  .basket-page .basket-inner .personal-info:before {
+    bottom: -7px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method {
+    padding-bottom: 26px;
+    margin-bottom: 26px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method .radio .radio-text {
+    font-size: 15px;
+  }
+  .basket-page .basket-inner .personal-info form .pay-method .radio .radio-text .label {
+    margin-top: 2px;
+  }
+  .basket-page .basket-inner .personal-info form .caption {
+    font-size: 16px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .confirm-rule .checkbox__label {
+    font-size: 10px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button {
+    width: 190px;
+    height: 38px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .btn-confirm button span {
+    font-size: 12px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price {
+    font-size: 24px;
+  }
+  .basket-page .basket-inner .personal-info form .total-price .price small {
+    font-size: 17px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs {
+    margin-bottom: 26px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .name,
+  .basket-page .basket-inner .personal-info form .inputs .last-name {
+    width: 48.5%;
+    margin-bottom: 9px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .name:before,
+  .basket-page .basket-inner .personal-info form .inputs .last-name:before {
+    top: 13px;
+    left: 11px;
+    width: 14px;
+    height: 12px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .phone {
+    width: 48.5%;
+    margin-bottom: 9px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .phone:before {
+    width: 9px;
+    height: 14px;
+    top: 12px;
+    left: 14px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .mail {
+    width: 48.5%;
+    margin-bottom: 9px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .mail:before {
+    top: 14px;
+    left: 11px;
+    width: 15px;
+    height: 11px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .address {
+    margin-bottom: 9px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .address:before {
+    top: 11px;
+    left: 13px;
+    width: 11px;
+    height: 17px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs .comment:before {
+    width: 15px;
+    height: 14px;
+    top: 18px;
+    left: 11px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'] {
+    height: 38px;
+    line-height: 38px;
+  }
+  .basket-page .basket-inner .personal-info form .inputs input[type='text'],
+  .basket-page .basket-inner .personal-info form .inputs textarea {
+    font-size: 13px;
+    padding-left: 30px;
+  }
+  .basket-page .basket-inner .your-order {
+    margin-bottom: 26px;
+  }
+  .basket-page .basket-inner .your-order:before {
+    bottom: -7px;
+  }
+  .basket-page .basket-inner .your-order .caption {
+    font-size: 16px;
+  }
+  .basket-page .basket-inner .your-order .total-block {
+    flex-wrap: wrap;
+  }
+  .basket-page .basket-inner .your-order .total-block .left-part {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 26px;
+  }
+  .basket-page .basket-inner .your-order .total-block .left-part .check,
+  .basket-page .basket-inner .your-order .total-block .left-part .reset {
+    display: inline-block;
+  }
+  .basket-page .basket-inner .your-order .total-block .left-part .check a,
+  .basket-page .basket-inner .your-order .total-block .left-part .reset a {
+    display: inline-block;
+    font-size: 13px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part {
+    width: 100%;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .total-price small {
+    font-size: 17px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .continue-shopping a,
+  .basket-page .basket-inner .your-order .total-block .right-part .text {
+    font-size: 13px;
+  }
+  .basket-page .basket-inner .your-order .total-block .right-part .text {
+    margin-bottom: 6px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap {
+    margin-bottom: 26px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .image {
+    width: 60px;
+    height: 60px;
+    padding: 6px;
+    margin-right: 12px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .quantity .number {
+    font-size: 16px;
+    line-height: 16px;
+    height: 28px;
+    width: 28px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .quantity .minus,
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .quantity .plus {
+    font-size: 20px;
+    width: 22px;
+    height: 26px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .info .title a {
+    font-size: 12px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .price {
+    font-size: 16px;
+    bottom: 18px;
+  }
+  .basket-page .basket-inner .your-order .card-wrap .card-order .price small {
     font-size: 12px;
   }
 }
