@@ -1937,11 +1937,26 @@ footer .footer-down .link-down a:hover {
   font-family: 'Cera Pro Regular', sans-serif;
   font-size: 18px;
   line-height: 100%;
+  position: relative;
   opacity: .5;
   transition: ease-in-out 0.4s;
 }
 .catalog .catalog-inner .sidebar-filter .filter_block .__content ul li a:hover {
   opacity: 1;
+}
+.catalog .catalog-inner .sidebar-filter .filter_block .__content ul li.active a {
+  padding-left: 10px;
+  opacity: 1;
+}
+.catalog .catalog-inner .sidebar-filter .filter_block .__content ul li.active a:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22%;
+  height: 60%;
+  border-radius: 4px;
+  width: 3px;
+  background: #fc3504;
 }
 .catalog .catalog-inner .catalog-cards {
   width: 74%;
@@ -5983,6 +5998,10 @@ input[type=checkbox] {
   }
   .catalog .catalog-inner .sidebar-filter .filter_block .__content ul li a {
     font-size: 17px;
+  }
+  .catalog .catalog-inner .sidebar-filter .filter_block .__content ul li.active a:before {
+    width: 2px;
+    top: 24%;
   }
   .catalog .catalog-inner .sidebar-filter .filter_block .__header {
     font-size: 22px;
