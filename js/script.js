@@ -209,11 +209,7 @@ function removeInBasketPanel() {
             }
             });
         });
-
     });
-
-
-
 }removeInBasketPanel();
 
 $(document).ajaxStop(function() {
@@ -240,14 +236,16 @@ function delivery() {
 
 
 function openFilter() {
-    $('.btn-filter').on('click', function () {
-        $('.filter-left').toggleClass('open-filter');
+    $('.filter-btn').on('click', function () {
+        $('.sidebar-filter').toggleClass('open-filter');
+        $(this).css('opacity','.5');
     });
 }openFilter();
 
 function closeFilter() {
     $('.close-filter').on('click', function () {
-        $('.filter-left').toggleClass('open-filter');
+        $('.sidebar-filter').toggleClass('open-filter');
+        $('.filter-btn').css('opacity','1');
     });
 }closeFilter();
 
