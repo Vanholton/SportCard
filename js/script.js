@@ -138,7 +138,8 @@ if($('.slider-full .item').length > 1) {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: true
+                    dots: true,
+                    arrows: false
                 }
             }
         ]
@@ -153,6 +154,7 @@ if($('.slider-nav .item').length > 1) {
         slidesToScroll: 1,
         asNavFor: '.slider-full',
         dots: false,
+        arrows: false,
         vertical: true,
         verticalSwiping: true,
         focusOnSelect: true,
@@ -171,14 +173,53 @@ if($('.slider-nav .item').length > 1) {
                     slidesToScroll: 1,
                     verticalSwiping: true,
                     focusOnSelect: true,
-                    focusOnSelect: true
+                    arrows: false,
+                    dots: false
                 }
             }
         ]
     });
+    function marginDots() {
+        if ($(window).width() < 480) {
+            $('.sliders').css('margin-bottom', '50px');
+        } else {
+            $('.sliders').css('margin-bottom', '0');
+        }
+    }marginDots();
+    $(window).resize(function() {
+        marginDots();
+    });
 } else {
     $('.slider-nav').remove();
 }
+
+function removeInBasketPanel() {
+    $('.card-wrap .card-order').hover(function () {
+        $(this).toggleClass('active');
+        let numb = $('.active .number').val();
+
+        $('.card-wrap .card-order').each(function () {
+            let numberOfCard = $('.card-wrap .card-order').length;
+            $('.quantity .minus').on('click', function() {
+            if (numberOfCard <= 1) {
+                numb = numb-1;
+                if (numb === 0) {
+                    $('.personal-info').remove();
+                }
+            }
+            });
+        });
+
+    });
+
+
+
+}removeInBasketPanel();
+
+$(document).ajaxStop(function() {
+    removeInBasketPanel();
+});
+
 
 $(".burger-menu").on('click', function () {
     $(this).toggleClass("open");
@@ -186,14 +227,7 @@ $(".burger-menu").on('click', function () {
 });
 
 
-$(window).on('scroll', function () {
-    let top = $(window).scrollTop();
-    if (top < 50) {
-        $('.bg-header').removeClass('fixed');
-    } else {
-        $('.bg-header').addClass('fixed');
-    }
-});
+
 
 function delivery() {
     $('.check-block label').on('click', function () {
@@ -202,54 +236,20 @@ function delivery() {
         let content = block.find('.input-text');
         content.addClass('open');
     });
-}
+}delivery();
 
-delivery();
-
-function payment() {
-    $('.payment-block label').on('click', function () {
-        $('.payment-block .input-text').removeClass('open');
-        let block = $(this).parent();
-        let content = block.find('.input-text');
-        content.addClass('open');
-    });
-}
-
-payment();
-
-function delayedAlert() {
-    let timeoutID = window.setTimeout(expandLogo, 1000);
-}
-
-function expandLogo() {
-    $('.main-banner .title, .main-banner .description, .main-banner .banner-button').addClass('is-move');
-}
-
-delayedAlert();
-
-function addtoFavorite() {
-    $('.add_to_card,.add-to-favorite').on('click', function () {
-        $(this).toggleClass('added');
-    });
-}
-
-addtoFavorite();
 
 function openFilter() {
     $('.btn-filter').on('click', function () {
         $('.filter-left').toggleClass('open-filter');
     });
-}
-
-openFilter();
+}openFilter();
 
 function closeFilter() {
     $('.close-filter').on('click', function () {
         $('.filter-left').toggleClass('open-filter');
     });
-}
-
-closeFilter();
+}closeFilter();
 
 function spoiler() {
     $('.__header').on('click', function () {
@@ -275,39 +275,7 @@ function spoiler() {
         }
 
     });
-}
-
-spoiler();
-
-$(document).ready(function () {
-
-    let $wrapper = $('.tab-wrapper'),
-        $allTabs = $wrapper.find('.tab-content > .tab'),
-        $tabMenu = $wrapper.find('.tab-menu li');
-
-    $allTabs.not(':first-of-type').hide();
-    $tabMenu.filter(':first-of-type').find(':first').width('100%');
-
-    $tabMenu.each(function (i) {
-        $(this).attr('data-tab', 'tab' + i);
-    });
-
-    $allTabs.each(function (i) {
-        $(this).attr('data-tab', 'tab' + i);
-    });
-
-    $tabMenu.on('click', function () {
-
-        let dataTab = $(this).data('tab'),
-            $getWrapper = $(this).closest($wrapper);
-
-        $getWrapper.find($tabMenu).removeClass('active');
-        $(this).addClass('active');
-        $getWrapper.find($allTabs).hide();
-        $getWrapper.find($allTabs).filter('[data-tab=' + dataTab + ']').show();
-    });
-
-});
+}spoiler();
 
 // MODAL WINDOW
 let modal = $('.modal');
