@@ -1642,6 +1642,7 @@ footer {
           line-height: 100%;
           color: @color-text-blue;
           outline: 0;
+          transition: ease-in-out .6s;
 
           &:focus, &:hover {
             border: 1px solid @bg-blue;
@@ -2884,12 +2885,12 @@ input[type=checkbox] {display: none}
                 opacity: .5;
               }
               &.left-td {
-                width: 70%;
+                width: 45%;
                 font-family: @GilroyRegular;
                 font-weight: bold;
               }
               &.right-td {
-                width: 30%;
+                width: 55%;
                 text-align: right;
                 opacity: .5;
                 font-family: @GilroyMedium;
@@ -3523,6 +3524,256 @@ input[type=checkbox] {display: none}
   100% {
     transform: rotate(0) translateX(0) translateY(0);
   }
+}
+
+/************************************************/
+/***************** MODAL WINDOW *****************/
+/************************************************/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  outline: 0;
+  transition: ease-out .5s;
+  z-index: 1200;
+  .overlay {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: @bg-blue-darken;
+    opacity: .8;
+  }
+  .modal-wrap {
+    max-width: 405px;
+    min-height: calc(96.5%);
+    position: relative;
+    .flex();
+    align-items: center;
+    margin: 1.75rem auto;
+    border-radius: 10px;
+
+    .modal-content {
+      width: 100%;
+      display: flex;
+      min-height: 300px;
+      position: relative;
+      top: -400px;
+      flex-direction: column;
+      border-radius: 0;
+      background: @bg-gray;
+      opacity: 0;
+      padding: 71px 46px 65px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s;
+      .close {
+        position: absolute;
+        right: 36px;
+        top: 36px;
+        z-index: 1;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        transition: all 0.5s;
+        &:after,&:before {
+          content: '';
+          position: absolute;
+          border-radius: 5px;
+          height: 3px;
+          width: 100%;
+          top: 50%;
+          left: 0;
+          background: #c2c2c2;
+          transition: all 0.5s;
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+        &:hover {
+          &:before {
+            background: #000;
+            transform: rotate(-45deg);
+          }
+          &:after {
+            background: #000;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .modal-head {
+        border-radius: 0;
+        margin-bottom: 30px;
+        padding: 0;
+        .caption {
+          font-family: @CeraProBold;
+          color: @color-text-blue;
+          text-align: center;
+          font-size: 22px;
+          line-height: 100%;
+          margin-bottom: 10px;
+        }
+        .text {
+          font-family: @CeraProRegular;
+          color: @color-text-blue;
+          font-size: 16px;
+          text-align: center;
+          line-height: 100%;
+          opacity: 0.7;
+        }
+      }
+
+      .modal-body {
+        form {
+          text-align: center;
+
+          .submit {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            &:before {
+              content: '';
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              width: 70%;
+              height: 80%;
+              background: @bg-red;
+              opacity: .3;
+              filter: blur(12px);
+            }
+            input[type='submit'] {
+              background: @bg-red;
+              color: @color-text-white;
+              font-family: @CeraProRegular;
+              display: inline-block;
+              cursor: pointer;
+              border: 0;
+              outline: 0;
+              padding: 14px 38px;
+              font-size: 16px;
+              line-height: 100%;
+              position: relative;
+              border-radius: 5px;
+              z-index: 11;
+            }
+          }
+
+          textarea, input[type='text'] {
+            width: 100%;
+            outline: 0;
+            border: 1px solid @bg-gray3;
+            border-radius: 5px;
+            color: @color-text-blue;
+            background: @bg-white;
+            font-family: @CeraProRegular;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 16px;
+            padding-left: 48px;
+            transition: ease-in-out .6s;
+            &:hover,&:focus {
+              border: 1px solid @bg-blue;
+            }
+          }
+          input[type='text'] {
+            height: 44px;
+            margin-bottom: 8px;
+          }
+          textarea {
+            padding-top: 12px;
+            padding-right: 15px;
+            margin-bottom: 22px;
+          }
+
+          .name,.tel,.mail,.textarea {
+            position: relative;
+            width: 100%;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 12px;
+              left: 16px;
+              width: 20px;
+              height: 20px;
+            }
+          }
+          .name {
+            &:before {
+              background-image: url("../img/icon/user_icon.svg");
+              background-position: center center;
+              background-repeat: no-repeat;
+            }
+          }
+          .tel:before {
+            background-image: url("../img/icon/conact-phone.svg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: .4;
+          }
+          .mail:before {
+            background-image: url("../img/icon/contact-mail.svg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: .6;
+          }
+          .textarea:before {
+            background-image: url("../img/icon/comment_icon.svg");
+            background-position: center center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    .modal-content {
+      opacity: 1;
+      top: 0;
+    }
+  }
+}
+.open-modal {
+  overflow: auto;
+  position: relative;
+  .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: @color-text-blue;
+  opacity: .5;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: @color-text-blue;
+  opacity: .5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: @color-text-blue;
+  opacity: .5;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: @color-text-blue;
+  opacity: .5;
 }
 
 /*  Ripple */
@@ -5109,10 +5360,14 @@ input[type=checkbox] {display: none}
 
     .header {
       background-color: @bg-white;
-      height: 110vh;
+      height: 100vh;
       position: relative;
+      overflow-y: scroll;
 
       .wrap-head {
+        &:before {
+          content: none;
+        }
         .right-part {
           z-index: 100;
           opacity: 1;
@@ -5459,6 +5714,15 @@ input[type=checkbox] {display: none}
           }
         }
       }
+    }
+  }
+
+  .open-modal {
+    overflow: hidden;
+    position: relative;
+    .modal {
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
   }
 }
@@ -5882,6 +6146,62 @@ input[type=checkbox] {display: none}
           }
           .price {
             font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .header .wrap-head .right-part {
+    top: 108px;
+    .lang {
+      margin-bottom: 58px;
+    }
+    .menu ul li {
+      margin-bottom: 15px;
+    }
+  }
+  .modal {
+    .modal-wrap {
+      max-width: 350px;
+      .modal-content {
+        padding: 50px 40px 60px;
+        .close {
+          right: 40px;
+          top: 40px;
+        }
+        .modal-body {
+          form {
+            input[type='text'],textarea {
+              font-size: 14px;
+              padding-left: 40px;
+            }
+            .name,.tel,.mail,.textarea {
+              &:before {
+                top: 12px;
+                left: 14px;
+                width: 17px;
+                height: 17px;
+              }
+            }
+            input[type='text'] {
+              height: 40px;
+            }
+            .submit {
+              input[type='submit'] {
+                padding: 14px 36px;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        .modal-head {
+          margin-bottom: 24px;
+          .caption {
+            font-size: 20px;
+          }
+          .text {
+            font-size: 14px;
           }
         }
       }
@@ -6341,6 +6661,7 @@ input[type=checkbox] {display: none}
       }
     }
   }
+
   .breads {
     .breads-inner {
       height: 64px;
@@ -6945,7 +7266,6 @@ input[type=checkbox] {display: none}
       .sliders {
         width: 100%;
         height: 280px;
-        margin-bottom: 50px;
         .slider-full {
           width: 100%;
           .slick-dots {
@@ -7236,6 +7556,53 @@ input[type=checkbox] {display: none}
                 font-size: 12px;
               }
             }
+          }
+        }
+      }
+    }
+  }
+
+  .modal {
+    .modal-wrap {
+      max-width: 280px;
+      .modal-content {
+        padding: 45px 22px 50px;
+        .close {
+          right: 22px;
+          top: 22px;
+        }
+        .modal-body {
+          form {
+            input[type='text'],textarea {
+              font-size: 13px;
+              padding-left: 36px;
+            }
+            .name,.tel,.mail,.textarea {
+              &:before {
+                top: 11px;
+                left: 12px;
+                width: 17px;
+                height: 17px;
+              }
+            }
+            input[type='text'] {
+              height: 38px;
+            }
+            .submit {
+              input[type='submit'] {
+                padding: 12px 33px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        .modal-head {
+          margin-bottom: 14px;
+          .caption {
+            font-size: 18px;
+          }
+          .text {
+            font-size: 12px;
           }
         }
       }
