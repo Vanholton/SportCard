@@ -976,7 +976,7 @@ footer {
           padding: 1px 8px 2px;
           line-height: 100%;
           background: @bg-blue;
-          box-shadow: 0px 0px 20px rgba(29, 61, 255, 0.4);
+          box-shadow: 0 0 20px rgba(29, 61, 255, 0.4);
           color: @color-text-white;
 
           &:before {
@@ -1287,6 +1287,7 @@ footer {
         .image {
           width: 144px;
           height: 187px;
+          margin-bottom: 5px;
 
           img {
             width: 100%;
@@ -1298,13 +1299,18 @@ footer {
           font-family: @CeraProLight;
           color: @color-text-blue;
           opacity: .5;
-          font-size: 22px;
-          line-height: 43px;
+          font-size: 18px;
+          line-height: 100%;
           height: 43px;
+          .flex();
+          align-items: center;
+          margin-bottom: 5px;
         }
 
         .popular-card-title {
           height: 70px;
+          .flex();
+          align-items: center;
 
           a {
             font-family: @CeraProBold;
@@ -2076,7 +2082,7 @@ footer {
 .catalog {
   width: 100%;
   position: relative;
-  padding: 60px 0;
+  padding: 60px 0 90px;
 
   .catalog-inner {
     width: 100%;
@@ -2352,7 +2358,7 @@ footer {
             font-family: @CeraProLight;
             color: @color-text-blue;
             opacity: .5;
-            font-size: 18px;
+            font-size: 17px;
             line-height: 100%;
             .flex();
             align-items: center;
@@ -2398,7 +2404,7 @@ footer {
             span {
               display: inline-block;
               position: absolute;
-              box-shadow: 0px 0px 20px rgba(29, 61, 255, 0.4);
+              box-shadow: 0 0 20px rgba(29, 61, 255, 0.4);
               top: -7px;
               right: -58px;
               border-top-left-radius: 7px;
@@ -2478,10 +2484,6 @@ footer {
           }
         }
       }
-    }
-
-    .pagination {
-      width: 100%;
     }
   }
 }
@@ -2782,7 +2784,7 @@ input[type=checkbox] {
             padding: 1px 8px 2px;
             line-height: 100%;
             background: @bg-blue;
-            box-shadow: 0px 0px 20px rgba(29, 61, 255, 0.4);
+            box-shadow: 0 0 20px rgba(29, 61, 255, 0.4);
             color: @color-text-white;
 
             &:before {
@@ -2822,6 +2824,7 @@ input[type=checkbox] {
             margin-right: 50px;
 
             .number {
+              pointer-events: none;
               padding: 0;
               border: 0;
               background: none;
@@ -3113,6 +3116,7 @@ input[type=checkbox] {
               margin-right: 50px;
 
               .number {
+                pointer-events: none;
                 padding: 0;
                 border: 0;
                 background: none;
@@ -3628,6 +3632,96 @@ input[type=checkbox] {
 }
 
 // -------
+// ---- ~ PAGINATION
+// _______
+.pagination-block {
+  padding-top: 30px;
+  width: 100%;
+  .filter_paginat {
+    width: 100%;
+    position: relative;
+    .pagination {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        text-align: center;
+        transition: ease-in-out .4s;
+        margin-right: 11px;
+        a {
+          font-family: @CeraProRegular;
+          font-size: 18px;
+          line-height: 32px;
+          color: @color-text-blue;
+          font-weight: bold;
+        }
+        &:hover {
+          background: @bg-blue-darken;
+          border: 2px solid @bg-white;
+          opacity: .7;
+          a {
+            color: @color-text-white;
+            font-weight: normal;
+          }
+        }
+        &.active {
+          background: @bg-red;
+          border: 2px solid @bg-white;
+          a {
+            color: @color-text-white;
+            font-weight: normal;
+            pointer-events: none;
+          }
+        }
+
+        &.arrows {
+          position: relative;
+          &.next {
+            &:before {
+              content: '';
+              position: absolute;
+              top: 7px;
+              width: 18px;
+              height: 18px;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              background-image: url("../img/icon/pag-next.svg");
+            }
+          }
+          &.prev {
+            &:before {
+              content: '';
+              position: absolute;
+              top: 7px;
+              width: 18px;
+              height: 18px;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              background-image: url("../img/icon/pag-prew.svg");
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+          &:hover {
+            background: transparent;
+            border: 2px solid transparent;
+            opacity: .7;
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------
 // ---- ~ ANIMATION
 // _______
 @keyframes sportCard {
@@ -3922,7 +4016,91 @@ input[type=checkbox] {
   }
 }
 
-.open-modal {
+#popup {
+  .modal-wrap {
+    max-width: 800px;
+    text-align: center;
+    .modal-body {
+
+    }
+
+    .icon {
+      margin-bottom: 20px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .caption {
+      font-size: 32px;
+      line-height: 50px;
+      color: @color-text-blue;
+      font-family: @CeraProBold;
+      margin-bottom: 25px;
+    }
+
+    .text {
+      font-size: 22px;
+      line-height: 100%;
+      color: @color-text-blue;
+      font-family: @CeraProRegular;
+      opacity: .6;
+      margin-bottom: 40px;
+    }
+
+    .inputs {
+      .flex();
+      justify-content: center;
+      a {
+        display: inline-block;
+        width: 210px;
+        height: 46px;
+        .flex();
+        align-items: center;
+        justify-content: center;
+        background-color: @bg-red;
+        border-radius: 5px;
+        position: relative;
+        transition: ease-in-out .6s;
+        margin-right: 30px;
+        &:nth-last-child(1) {
+          margin-right: 0;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 80%;
+          height: 90%;
+          top: 15px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          background-color: @bg-red;
+          opacity: 0.4;
+          filter: blur(15px);
+          z-index: 0;
+        }
+
+        &:hover {
+          background-color: @bg-red-hover;
+        }
+
+        span {
+          z-index: 1;
+          position: relative;
+          font-family: @CeraProRegular;
+          font-size: 16px;
+          line-height: 100%;
+          color: @color-text-white;
+        }
+      }
+    }
+  }
+}
+
+body.open-modal {
   overflow: auto;
   position: relative;
 
@@ -3987,6 +4165,31 @@ input[type=checkbox] {
 // -------
 // ---- ~ Responsive DESKTOP
 // _______
+@media screen and (max-width: 1800px) {
+  .most-popular .slider-popular-card .slick-next {
+    right: -83px;
+  }
+  .most-popular .slider-popular-card .slick-prev {
+    left: -83px;
+  }
+}
+@media screen and (max-width: 1650px) {
+  .most-popular .slider-popular-card {
+    .slick-next {
+      right: -83px;
+      left: 0;
+    }
+    .slick-prev {
+      left: -83px;
+      right: 0;
+    }
+    .slick-next, .slick-prev {
+      top: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
 @media screen and (max-width: @wide-screen) {
   .container {
     padding-left: 40px;
@@ -4046,10 +4249,10 @@ input[type=checkbox] {
 
         .popular-card-inner {
           .popular-card-title {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
 
             a {
-              font-size: 16px;
+              font-size: 17px;
             }
           }
 
@@ -4076,7 +4279,8 @@ input[type=checkbox] {
           }
 
           .tag {
-            font-size: 20px;
+            font-size: 17px;
+            height: 38px;
           }
 
           .popular-card-btn {
@@ -4485,6 +4689,120 @@ input[type=checkbox] {
       }
     }
   }
+
+  .catalog {
+    .catalog-inner {
+      .catalog-cards {
+        width: 73%;
+        .catalog-card {
+          &:before {
+            filter: blur(20px);
+          }
+
+          .catalog-card-inner {
+            .catalog-card-title {
+              margin-bottom: 15px;
+
+              a {
+                font-size: 17px;
+              }
+            }
+
+            .catalog-card-price {
+              font-size: 32px;
+
+              small {
+                font-size: 20px;
+              }
+
+              span {
+                font-size: 15px;
+
+                &:before {
+                  border-bottom: 12px solid @bg-blue;
+
+                }
+
+                &:after {
+                  bottom: 2px;
+                  border-top: 12px solid @bg-blue;
+                }
+              }
+            }
+
+            .tag {
+              font-size: 17px;
+              height: 38px;
+            }
+
+            .catalog-card-btn {
+              a {
+                width: 144px;
+                height: 48px;
+                font-size: 15px;
+                line-height: 48px;
+              }
+            }
+
+            .labels {
+              .new, .discount {
+                font-size: 14px;
+                width: 64px;
+                height: 29px;
+              }
+            }
+          }
+        }
+      }
+      .sidebar-filter {
+        width: 220px;
+        .filter_block {
+          .__content ul li a {
+            font-size: 17px;
+          }
+          .__header {
+            font-size: 20px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  #popup {
+    .modal-wrap {
+      max-width: 800px;
+      .icon {
+        margin-bottom: 20px;
+        img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+
+      .caption {
+        font-size: 28px;
+        line-height: 48px;
+        margin-bottom: 20px;
+      }
+
+      .text {
+        font-size: 20px;
+        line-height: 100%;
+        margin-bottom: 30px;
+      }
+
+      .inputs {
+        a {
+          width: 190px;
+          height: 44px;
+          span {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: @desktop) {
@@ -4767,7 +5085,7 @@ input[type=checkbox] {
 
           .popular-card-title {
             a {
-              font-size: 14px;
+              font-size: 15px;
             }
           }
 
@@ -4793,7 +5111,8 @@ input[type=checkbox] {
           }
 
           .tag {
-            font-size: 18px;
+            font-size: 14px;
+            height: 30px;
           }
 
           .image {
@@ -5256,6 +5575,87 @@ input[type=checkbox] {
       }
     }
   }
+
+  .catalog {
+    .catalog-inner {
+      .catalog-cards {
+        width: 73%;
+        .catalog-card {
+          .catalog-card-inner {
+            padding: 40px 25px 55px;
+
+            .labels {
+              .new, .discount {
+                font-size: 12px;
+                width: 58px;
+                height: 26px;
+              }
+            }
+
+            .catalog-card-title {
+              a {
+                font-size: 15px;
+              }
+            }
+
+            .catalog-card-price {
+              font-size: 30px;
+
+              small {
+                font-size: 18px;
+              }
+
+              span {
+                font-size: 14px;
+                right: -52px;
+
+                &:before {
+                  border-bottom: 11px solid #1d3dff;
+                }
+
+                &:after {
+                  border-top: 11px solid #1d3dff;
+                }
+              }
+            }
+
+            .tag {
+              font-size: 14px;
+              height: 30px;
+            }
+
+            .image {
+              width: 140px;
+              height: 175px;
+            }
+
+            .catalog-card-btn a {
+              width: 136px;
+              height: 44px;
+              font-size: 14px;
+              line-height: 44px;
+            }
+          }
+        }
+      }
+      .sidebar-filter {
+        width: 220px;
+        .filter_block {
+          .__content ul li a {
+            font-size: 17px;
+          }
+          .__header {
+            font-size: 20px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .checkbox__label {
+    font-size: 17px;
+  }
 }
 
 // -------
@@ -5440,6 +5840,8 @@ input[type=checkbox] {
       .slick-prev, .slick-next {
         top: 100%;
         z-index: 1;
+        width: 54px;
+        height: 54px;
       }
 
       .slick-prev {
@@ -5452,6 +5854,10 @@ input[type=checkbox] {
         left: 0;
         right: -80px;
         margin: 0 auto;
+      }
+
+      .popular-card .popular-card-inner .popular-card-price {
+        font-size: 28px;
       }
     }
 
@@ -6008,7 +6414,7 @@ input[type=checkbox] {
     }
   }
 
-  .open-modal {
+  body.open-modal {
     overflow: hidden;
     position: relative;
 
@@ -6047,14 +6453,17 @@ input[type=checkbox] {
         position: absolute;
         top: -38px;
         width: 350px;
-        height: 100vh;
         background: @bg-white;
         right: 0;
         transform: translateX(120%);
         transition: ease-in-out .6s;
         z-index: 100;
         box-shadow: 0 0 9px #cacaca;
-        padding: 63px 22px 20px;
+        padding: 63px 22px;
+
+        .filter_block .__header {
+          color: @color-text-blue;
+        }
 
         .close-filter {
           display: inline-block;
@@ -6084,6 +6493,48 @@ input[type=checkbox] {
 
       .catalog-cards {
         margin-top: 25px;
+        width: 100%;
+        .catalog-card .catalog-card-inner .catalog-card-price {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+
+  .pagination-block .filter_paginat .pagination {
+    text-align: center;
+  }
+
+  #popup {
+    .modal-wrap {
+      max-width: 700px;
+      .icon {
+        margin-bottom: 20px;
+        img {
+          width: 85px;
+          height: 85px;
+        }
+      }
+
+      .caption {
+        font-size: 26px;
+        line-height: 44px;
+        margin-bottom: 20px;
+      }
+
+      .text {
+        font-size: 18px;
+        margin-bottom: 25px;
+      }
+
+      .inputs {
+        a {
+          width: 180px;
+          height: 42px;
+          span {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
@@ -6635,6 +7086,58 @@ input[type=checkbox] {
       }
     }
   }
+
+  .catalog {
+    padding: 60px 0 80px;
+    .catalog-inner {
+      .catalog-cards {
+        .catalog-card {
+          margin-bottom: 15px;
+          width: 49%;
+          &:nth-child(3n) {
+            margin-right: 2%;
+          }
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #popup {
+    .modal-wrap {
+      max-width: 90%;
+      .icon {
+        margin-bottom: 15px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .caption {
+        font-size: 24px;
+        line-height: 100%;
+        margin-bottom: 20px;
+      }
+
+      .text {
+        font-size: 17px;
+        margin-bottom: 25px;
+      }
+
+      .inputs {
+        a {
+          width: 170px;
+          height: 40px;
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: @phone-wide) {
@@ -6806,8 +7309,8 @@ input[type=checkbox] {
           }
 
           .popular-card-price {
-            font-size: 26px;
-            margin-bottom: 40px;
+            font-size: 24px;
+            margin-bottom: 30px;
 
             span {
               right: 12px;
@@ -6826,10 +7329,11 @@ input[type=checkbox] {
             .flex();
             align-items: center;
             margin-bottom: 10px;
+            height: 60px;
 
             a {
               margin-bottom: 0;
-              font-size: 13px;
+              font-size: 14px;
             }
           }
 
@@ -7321,6 +7825,7 @@ input[type=checkbox] {
   }
 
   .catalog {
+    padding: 60px 0 60px;
     .catalog-inner {
       .sidebar-filter {
         top: -40px;
@@ -7337,9 +7842,28 @@ input[type=checkbox] {
             }
           }
 
-          .__header {
-            font-size: 22px;
-            line-height: 100%;
+        }
+      }
+
+      .catalog-cards {
+        .catalog-card .catalog-card-inner {
+          padding: 30px 12px 45px;
+          .labels {
+            .new, .discount {
+              font-size: 12px;
+              width: 55px;
+              height: 24px;
+            }
+          }
+          .catalog-card-price {
+            font-size: 24px;
+            margin-bottom: 30px;
+          }
+          .catalog-card-title {
+            height: 60px;
+            a {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -7349,6 +7873,23 @@ input[type=checkbox] {
 
   .checkbox__label {
     font-size: 17px;
+  }
+
+  .pagination-block {
+    .filter_paginat {
+      .pagination {
+        text-align: center;
+        li {
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+          a {
+            font-size: 16px;
+            line-height: 27px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -7442,7 +7983,7 @@ input[type=checkbox] {
 
           .popular-card-price {
             font-size: 22px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
 
             small {
               font-size: 15px;
@@ -7453,8 +7994,11 @@ input[type=checkbox] {
             }
           }
 
-          .popular-card-title a {
-            font-size: 12px;
+          .popular-card-title {
+            margin-bottom: 10px;
+            a {
+              font-size: 12px;
+            }
           }
 
           .tag {
@@ -8223,7 +8767,7 @@ input[type=checkbox] {
       max-width: 280px;
 
       .modal-content {
-        padding: 45px 22px 50px;
+        padding: 45px 22px 40px;
 
         .close {
           right: 22px;
@@ -8275,6 +8819,7 @@ input[type=checkbox] {
   }
 
   .catalog {
+    padding: 60px 0 40px;
     .catalog-inner {
       .sidebar-filter {
         top: -40px;
@@ -8296,10 +8841,153 @@ input[type=checkbox] {
         }
       }
 
+      .catalog-cards {
+        .catalog-card {
+          .catalog-card-inner {
+            padding: 20px 12px 30px;
+
+            .labels {
+              .new, .discount {
+                font-size: 10px;
+                width: 46px;
+                height: 22px;
+              }
+            }
+
+            .catalog-card-btn a {
+              width: 104px;
+              height: 36px;
+              font-size: 12px;
+              line-height: 36px;
+            }
+
+            .catalog-card-price {
+              font-size: 22px;
+              margin-bottom: 20px;
+
+              small {
+                font-size: 15px;
+              }
+
+              span {
+                right: 5px;
+              }
+            }
+
+            .catalog-card-title {
+              margin-bottom: 10px;
+              a {
+                font-size: 12px;
+              }
+            }
+
+            .tag {
+              font-size: 12px;
+            }
+
+            .image {
+              width: 90px;
+              height: 115px;
+            }
+          }
+        }
+      }
     }
   }
 
   .checkbox__label {
     font-size: 16px;
+  }
+
+  @keyframes burgerTop {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(4px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+    75% {
+      transform: translateY(12px);
+    }
+    100% {
+      transform: translateY(16px);
+    }
+  }
+
+  @keyframes burgerBot {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-4px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    75% {
+      transform: translateY(-12px);
+    }
+    100% {
+      transform: translateY(-16px);
+    }
+  }
+
+  .pagination-block {
+    padding-top: 15px;
+    .filter_paginat {
+      .pagination {
+        text-align: center;
+        li {
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+          a {
+            font-size: 16px;
+            line-height: 27px;
+          }
+        }
+      }
+    }
+  }
+
+  #popup {
+    .modal-wrap {
+      .icon {
+        margin-bottom: 12px;
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+
+      .caption {
+        font-size: 22px;
+        line-height: 100%;
+        margin-bottom: 20px;
+      }
+
+      .text {
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+
+      .inputs {
+        flex-flow: column;
+        align-items: center;
+        flex-wrap: wrap;
+        a {
+          width: 170px;
+          height: 38px;
+          margin-bottom: 15px;
+          margin-right: 0;
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
   }
 }
