@@ -290,9 +290,10 @@ $('.open-modal').on('click', function () {
 function close_modal() {
     $(".modal").removeClass('active');
     $("body").removeClass("open-modal");
+    $("#popup").removeClass('active');
 }
 
-$('.close,.close-window, .modal, .modal-wrap,.overlay').on('click', function (e) {
+$('.close,.close-window,.close-window span, .modal, .modal-wrap,.overlay').on('click', function (e) {
     if (e.target === this) {
         close_modal();
     }
